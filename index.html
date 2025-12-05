@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio QR Code</title>
+
+    <!-- QR Code CDN -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script> 
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            /* White background */
+            color: #111;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background: #f3f4f6;
+            /* Light grey card */
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e5e7eb;
+        }
+        h1 {
+            margin-bottom: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+        canvas {
+            margin-top: 15px;
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            margin-top: 12px;
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Scan This QR to Visit My Portfolio</h1>
+
+        <canvas id="qr"></canvas>
+
+        <p>Point your camera to open my portfolio</p>
+    </div>
+    <script>
+        // Replace with your portfolio link
+        const portfolioURL = "https://portfolio-lovat-eta-40.vercel.app/";
+        const qr = new QRious({
+            element: document.getElementById("qr"),
+            value: portfolioURL,
+            size: 250,
+        });
+    </script>
+</body>
+
+</html>
